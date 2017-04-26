@@ -41,6 +41,13 @@ class TableResults extends Component {
 
           </TableBody>
         </Table>
+
+        {
+          !this.props.results.length ?
+          <h1 className='no-results'>No results</h1>
+          :
+          null
+        }
       </div>
     )
   }
