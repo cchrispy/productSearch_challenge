@@ -33,7 +33,7 @@ class TableResults extends Component {
               this.props.results.map(product => (
                 <TableRow selectable={ false } key={ product.name } >
                   <TableRowColumn>{ product.name }</TableRowColumn>
-                  <TableRowColumn>{ product.url }</TableRowColumn>
+                  <TableRowColumn><a href={ product.url }>{ product.url }</a></TableRowColumn>
                   <TableRowColumn>{ product.type }</TableRowColumn>
                 </TableRow>
               ))
