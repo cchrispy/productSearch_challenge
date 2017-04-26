@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import TextField from 'material-ui/TextField';
 
 class SearchBar extends Component {
   constructor(props) {
@@ -7,8 +8,9 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <div>
-        Search Bar Here!
+      <div className='search-bar'>
+        <TextField
+          floatingLabelText='Enter a product name here' />
       </div>
     )
   }
