@@ -1,7 +1,16 @@
 // JSON file containing all the products
 import products from '../data/products.json';
 
-var results = products.products.slice();
+// remove duplicate products from the list of products
+var storage = {};
+var uniqProducts = products.products.filter(product => {
+  if (!storage[product.name]) {
+    storage[product.name] = true;
+    return true;
+  }
+  return false;
+})
+var results = uniqProducts;
 
 const filteredResults = (state = { results, input: '' }, action) => {
   switch (action.type) {
@@ -19,7 +28,7 @@ const filteredResults = (state = { results, input: '' }, action) => {
     case 'EXPAND_SEARCH':
       // If the user's input shortens, then re-filter the JSON file
 
-      results = products.products.filter(product => {
+      results = uniqProducts.filter(product => {
         return product.name.toLowerCase().slice(0, action.input.length) === action.input.toLowerCase()
       })
       return Object.assign({}, { results, input: action.input });
