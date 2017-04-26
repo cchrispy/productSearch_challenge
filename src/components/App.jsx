@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import sampleAction from '../actions/sampleAction';
 
+import SearchBar from './SearchBar.jsx';
 import '../styles/main.scss';
 
 class App extends Component {
@@ -14,7 +15,9 @@ class App extends Component {
       <div>
 
         <h1 className='title'>Search for a product</h1><hr/>
-        
+
+        <SearchBar />
+
       </div>
     )
   }
