@@ -4,6 +4,9 @@ import { Provider } from 'react-redux';
 import { render } from 'react-dom';
 import mainReducer from './reducers/mainReducer';
 
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin(); // for material-ui onTouchTap events
+
 import App from './components/App.jsx';
 
 let store = createStore(
