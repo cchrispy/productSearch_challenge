@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import sampleAction from '../actions/sampleAction';
 
 import SearchBar from './SearchBar.jsx';
 import TableResults from './TableResults.jsx';
@@ -17,25 +16,18 @@ class App extends Component {
 
         <h1 className='title'>Search for a product</h1><hr/>
 
-        <SearchBar />
+        <SearchBar input={ this.props.input }/>
 
-        <TableResults />
+        <TableResults results={ this.props.results }/>
 
       </div>
     )
   }
 }
 
-// const mapStateToProps = (state, ownProps) => ({
-//   reduxStore: state
-// })
+const mapStateToProps = (state, ownProps) => ({
+  input: state.filteredResults.input,
+  results: state.filteredResults.results
+})
 
-// const mapDispatchToProps = (dispatch, ownProps) => ({
-//   sampleAction: () => {
-//     dispatch(sampleAction())
-//   }
-// })
-
-// export default connect(mapStateToProps, mapDispatchToProps)(App);
-
-export default App;
+export default connect(mapStateToProps)(App);
