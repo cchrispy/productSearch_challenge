@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import TextField from 'material-ui/TextField';
+import RaisedButton from 'material-ui/RaisedButton';
 
 import { narrowSearch, expandSearch } from '../actions/searchAction';
 
@@ -12,12 +13,21 @@ class SearchBar extends Component {
   render() {
     return (
       <div className='search-bar'>
+
         <span className='inline'>
-        <TextField
-          floatingLabelText='Enter a product name here'
-          onChange={ this.props.search } />
+          <TextField
+            floatingLabelText='Enter a product name here'
+            onChange={ this.props.search } />
         </span>
-        <span className='inline'>TYPE filter goes here later</span>
+
+        <span className='inline'>
+          <RaisedButton label='button 1' primary/>
+          <RaisedButton label='button 2' primary/>
+          <RaisedButton label='button 3' primary/>
+          <RaisedButton label='button 4' primary/>
+          <RaisedButton label='button 5' primary/>
+        </span>
+
       </div>
     )
   }
