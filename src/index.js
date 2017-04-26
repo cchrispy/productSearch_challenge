@@ -7,7 +7,7 @@ import mainReducer from './reducers/mainReducer';
 import App from './components/App.jsx';
 
 let store = createStore(
-  mainReducer,
+  mainReducer
 );
 
 const refresh = () => {
