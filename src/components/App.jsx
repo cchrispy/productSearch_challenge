@@ -6,16 +6,12 @@ import SearchBar from './SearchBar.jsx';
 import TableResults from './TableResults.jsx';
 import '../styles/main.scss';
 
-// JSON file containing all the products
-import products from '../data/products.json';
-
 class App extends Component {
   constructor(props) {
     super(props);
   }
 
   render() {
-    console.log(products);
     return (
       <div>
 

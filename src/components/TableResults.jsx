@@ -9,6 +9,7 @@ class TableResults extends Component {
   render() {
     return (
       <div className='table-results'>
+      
         <Table
           selectable={ false }
           wrapperStyle={{ maxHeight: '70vh' }} >
@@ -126,8 +127,6 @@ class TableResults extends Component {
           </TableBody>
 
         </Table>
-
-
       </div>
     )
   }

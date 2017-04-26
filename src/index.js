@@ -15,6 +15,7 @@ let store = createStore(
 );
 
 const refresh = () => {
+  console.log(store.getState());
   render(
     <MuiThemeProvider>
       <Provider store={ store }>

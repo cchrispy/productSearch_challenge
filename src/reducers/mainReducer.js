@@ -3,10 +3,10 @@
 */
 
 import { combineReducers } from 'redux';
-import sampleReducer from './sampleReducer';
+import filteredResults from './filteredResults';
 
 const mainReducer = combineReducers({
-  sampleReducer
+  filteredResults
 })
 
 export default mainReducer;
