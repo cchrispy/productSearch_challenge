@@ -12,7 +12,9 @@ class App extends Component {
   render() {
     return (
       <div>
-        Hello World!
+
+        <h1 className='title'>Search for a product</h1><hr/>
+        
       </div>
     )
   }
