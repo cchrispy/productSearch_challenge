@@ -9,8 +9,11 @@ class SearchBar extends Component {
   render() {
     return (
       <div className='search-bar'>
+        <span className='inline'>
         <TextField
           floatingLabelText='Enter a product name here' />
+        </span>
+        <span className='inline'>TYPE filter goes here later</span>
       </div>
     )
   }
