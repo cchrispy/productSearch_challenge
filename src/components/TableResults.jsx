@@ -28,104 +28,18 @@ class TableResults extends Component {
 
           <TableBody
             displayRowCheckbox={ false } >
-            <TableRow
-              selectable={ false } >
-              <TableRowColumn>Chris</TableRowColumn>
-              <TableRowColumn>google</TableRowColumn>
-              <TableRowColumn>HUMAN</TableRowColumn>
-            </TableRow>
-            <TableRow
-              selectable={ false } >
-              <TableRowColumn>Chris</TableRowColumn>
-              <TableRowColumn>google</TableRowColumn>
-              <TableRowColumn>HUMAN</TableRowColumn>
-            </TableRow>
-            <TableRow
-              selectable={ false } >
-              <TableRowColumn>Chris</TableRowColumn>
-              <TableRowColumn>google</TableRowColumn>
-              <TableRowColumn>HUMAN</TableRowColumn>
-            </TableRow>
-            <TableRow
-              selectable={ false } >
-              <TableRowColumn>Chris</TableRowColumn>
-              <TableRowColumn>google</TableRowColumn>
-              <TableRowColumn>HUMAN</TableRowColumn>
-            </TableRow>
-            <TableRow
-              selectable={ false } >
-              <TableRowColumn>Chris</TableRowColumn>
-              <TableRowColumn>google</TableRowColumn>
-              <TableRowColumn>HUMAN</TableRowColumn>
-            </TableRow>
-            <TableRow
-              selectable={ false } >
-              <TableRowColumn>Chris</TableRowColumn>
-              <TableRowColumn>google</TableRowColumn>
-              <TableRowColumn>HUMAN</TableRowColumn>
-            </TableRow>
-            <TableRow
-              selectable={ false } >
-              <TableRowColumn>Chris</TableRowColumn>
-              <TableRowColumn>google</TableRowColumn>
-              <TableRowColumn>HUMAN</TableRowColumn>
-            </TableRow>
-            <TableRow
-              selectable={ false } >
-              <TableRowColumn>Chris</TableRowColumn>
-              <TableRowColumn>google</TableRowColumn>
-              <TableRowColumn>HUMAN</TableRowColumn>
-            </TableRow>
-            <TableRow
-              selectable={ false } >
-              <TableRowColumn>Chris</TableRowColumn>
-              <TableRowColumn>google</TableRowColumn>
-              <TableRowColumn>HUMAN</TableRowColumn>
-            </TableRow>
-            <TableRow
-              selectable={ false } >
-              <TableRowColumn>Chris</TableRowColumn>
-              <TableRowColumn>google</TableRowColumn>
-              <TableRowColumn>HUMAN</TableRowColumn>
-            </TableRow>
-            <TableRow
-              selectable={ false } >
-              <TableRowColumn>Chris</TableRowColumn>
-              <TableRowColumn>google</TableRowColumn>
-              <TableRowColumn>HUMAN</TableRowColumn>
-            </TableRow>
-            <TableRow
-              selectable={ false } >
-              <TableRowColumn>Chris</TableRowColumn>
-              <TableRowColumn>google</TableRowColumn>
-              <TableRowColumn>HUMAN</TableRowColumn>
-            </TableRow>
-            <TableRow
-              selectable={ false } >
-              <TableRowColumn>Chris</TableRowColumn>
-              <TableRowColumn>google</TableRowColumn>
-              <TableRowColumn>HUMAN</TableRowColumn>
-            </TableRow>
-            <TableRow
-              selectable={ false } >
-              <TableRowColumn>Chris</TableRowColumn>
-              <TableRowColumn>google</TableRowColumn>
-              <TableRowColumn>HUMAN</TableRowColumn>
-            </TableRow>
-            <TableRow
-              selectable={ false } >
-              <TableRowColumn>Chris</TableRowColumn>
-              <TableRowColumn>google</TableRowColumn>
-              <TableRowColumn>HUMAN</TableRowColumn>
-            </TableRow>
-            <TableRow
-              selectable={ false } >
-              <TableRowColumn>Chris</TableRowColumn>
-              <TableRowColumn>google</TableRowColumn>
-              <TableRowColumn>HUMAN</TableRowColumn>
-            </TableRow>
-          </TableBody>
 
+            {
+              this.props.results.map(product => (
+                <TableRow selectable={ false } key={ product.name } >
+                  <TableRowColumn>{ product.name }</TableRowColumn>
+                  <TableRowColumn>{ product.url }</TableRowColumn>
+                  <TableRowColumn>{ product.type }</TableRowColumn>
+                </TableRow>
+              ))
+            }
+
+          </TableBody>
         </Table>
       </div>
     )
