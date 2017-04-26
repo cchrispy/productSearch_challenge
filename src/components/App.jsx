@@ -18,14 +18,16 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => ({
-  reduxStore: state
-})
+// const mapStateToProps = (state, ownProps) => ({
+//   reduxStore: state
+// })
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
-  sampleAction: () => {
-    dispatch(sampleAction())
-  }
-})
+// const mapDispatchToProps = (dispatch, ownProps) => ({
+//   sampleAction: () => {
+//     dispatch(sampleAction())
+//   }
+// })
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+// export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+export default App;
