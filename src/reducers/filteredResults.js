@@ -3,13 +3,16 @@ import products from '../data/products.json';
 
 // remove duplicate products from the list of products
 var storage = {};
+var types = {};
 var uniqProducts = products.products.filter(product => {
+  types[product.type] = true;
   if (!storage[product.name]) {
     storage[product.name] = true;
     return true;
   }
   return false;
 })
+console.log('TYPES', types);
 var results = uniqProducts;
 
 const filteredResults = (state = { results, input: '' }, action) => {

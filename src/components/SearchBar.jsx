@@ -8,6 +8,13 @@ import { narrowSearch, expandSearch } from '../actions/searchAction';
 class SearchBar extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      type: ''
+    }
+  }
+
+  filterType(type, e) {
+    this.setState({ type });
   }
 
   render() {
@@ -21,11 +28,18 @@ class SearchBar extends Component {
         </span>
 
         <span className='inline'>
-          <RaisedButton label='button 1' primary/>
-          <RaisedButton label='button 2' primary/>
-          <RaisedButton label='button 3' primary/>
-          <RaisedButton label='button 4' primary/>
-          <RaisedButton label='button 5' primary/>
+          <div className='filter-buttons'>
+            <span>
+              <RaisedButton className='filter-button' label='Bank' onTouchTap={ this.filterType.bind(this, 'BANK') } primary={ this.state.type === 'BANK' }/>
+              <RaisedButton className='filter-button' label='Credit Card' onTouchTap={ this.filterType.bind(this, 'CREDIT_CARD') } primary={ this.state.type === 'CREDIT_CARD' }/>
+              <RaisedButton className='filter-button' label='Investment' onTouchTap={ this.filterType.bind(this, 'INVESTMENT') } primary={ this.state.type === 'INVESTMENT' }/>
+            </span>
+            <span>
+              <RaisedButton className='filter-button' label='Loan' onTouchTap={ this.filterType.bind(this, 'LOAN') } primary={ this.state.type === 'LOAN' }/>
+              <RaisedButton className='filter-button' label='Mortgage' onTouchTap={ this.filterType.bind(this, 'MORTGAGE') } primary={ this.state.type === 'MORTGAGE' }/>
+              <RaisedButton className='filter-button' label='None' onTouchTap={ this.filterType.bind(this, '') } primary={ this.state.type === '' }/>
+            </span>
+          </div>
         </span>
 
       </div>
