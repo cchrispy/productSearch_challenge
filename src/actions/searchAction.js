@@ -1,16 +1,18 @@
-const narrowSearch = input => ({
+const narrowSearch = (input, filter) => ({
   type: 'NARROW_SEARCH',
+  filter: filter || '',
   input
 })
 
-const expandSearch = input => ({
+const expandSearch = (input, filter) => ({
   type: 'EXPAND_SEARCH',
+  filter: filter || '',
   input
 })
 
-const addFilter = type => ({
+const addFilter = filter => ({
   type: 'APPLY_FILTER',
-  type
+  filter
 })
 
 const removeFilter = () => ({

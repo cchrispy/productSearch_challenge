@@ -13,7 +13,7 @@ var uniqProducts = products.products.filter(product => {
 var results = uniqProducts;
 var typeFilter = results.slice();
 
-const filteredResults = (state = { results, input: '' }, action) => {
+const filteredResults = (state = { results, input: '', filter: '' }, action) => {
   switch (action.type) {
 
     case 'NARROW_SEARCH':
@@ -24,7 +24,13 @@ const filteredResults = (state = { results, input: '' }, action) => {
       results = results.filter(product => {
         return product.name.toLowerCase().slice(0, action.input.length) === action.input.toLowerCase()
       })
-      return Object.assign({}, { results, input: action.input });
+      if (action.filter) { // apply a filter if it exists
+        typeFilter = results.filter(product => {
+          return product.type === action.filter;
+        })
+        return Object.assign({}, state, { results: typeFilter, input: action.input });
+      }
+      return Object.assign({}, state, { results, input: action.input });
 
     case 'EXPAND_SEARCH':
       // If the user's input shortens, then re-filter the JSON file
@@ -32,20 +38,26 @@ const filteredResults = (state = { results, input: '' }, action) => {
       results = uniqProducts.filter(product => {
         return product.name.toLowerCase().slice(0, action.input.length) === action.input.toLowerCase()
       })
-      return Object.assign({}, { results, input: action.input });
+      if (action.filter) { // apply a filter if it exists
+        typeFilter = results.filter(product => {
+          return product.type === action.filter;
+        })
+        return Object.assign({}, state, { results: typeFilter, input: action.input });
+      }
+      return Object.assign({}, state, { results, input: action.input });
 
     case 'APPLY_FILTER':
       // Filter the products based on the type
 
       typeFilter = results.filter(product => {
-        return product.type === action.type;
+        return product.type === action.filter;
       })
-      return Object.assign({}, { results: typeFilter });
+      return Object.assign({}, state, { results: typeFilter, filter: action.filter });
 
     case 'REMOVE_FILTER':
       // When type 'NONE' is selected
 
-      return Object.assign({}, { results });
+      return Object.assign({}, state, { results, filter: '' });
 
     default:
       return state;

@@ -16,7 +16,7 @@ class App extends Component {
 
         <h1 className='title'>Search for a product</h1><hr/>
 
-        <SearchBar input={ this.props.input }/>
+        <SearchBar input={ this.props.input } filter={ this.props.filter }/>
 
         <TableResults results={ this.props.results }/>
 
@@ -27,6 +27,7 @@ class App extends Component {
 
 const mapStateToProps = (state, ownProps) => ({
   input: state.filteredResults.input,
+  filter: state.filteredResults.filter,
   results: state.filteredResults.results
 })
 

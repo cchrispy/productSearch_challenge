@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
-import { narrowSearch, expandSearch } from '../actions/searchAction';
+import { narrowSearch, expandSearch, addFilter, removeFilter } from '../actions/searchAction';
 
 class SearchBar extends Component {
   constructor(props) {
@@ -15,6 +15,7 @@ class SearchBar extends Component {
 
   filterType(type, e) {
     this.setState({ type });
+    this.props.filter(type);
   }
 
   render() {
@@ -55,9 +56,16 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   search: (e, input) => {
     e.preventDefault();
     if (input.length > ownProps.input.length) {
-      dispatch(narrowSearch(input));
+      dispatch(narrowSearch(input, ownProps.filter));
     } else {
-      dispatch(expandSearch(input));
+      dispatch(expandSearch(input, ownProps.filter));
+    }
+  },
+  filter: type => {
+    if (!type) {
+      dispatch(removeFilter());
+    } else {
+      dispatch(addFilter(type));
     }
   }
 })
