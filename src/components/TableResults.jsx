@@ -27,7 +27,8 @@ class TableResults extends Component {
           </TableHeader>
 
           <TableBody
-            displayRowCheckbox={ false } >
+            displayRowCheckbox={ false }
+            showRowHover={ true } >
 
             {
               this.props.results.map(product => (
