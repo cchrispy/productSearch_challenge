@@ -1,5 +1,6 @@
 # productSearch_challenge
 Search & filter for products  
+Check it out [here](https://cchrispy.github.io/productSearch_challenge/)!
 
 ### Installation  
 ```
